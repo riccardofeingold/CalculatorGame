@@ -26,6 +26,7 @@ class ResultViewController: UIViewController {
     @IBAction func restartPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     /*
     // MARK: - Navigation
 

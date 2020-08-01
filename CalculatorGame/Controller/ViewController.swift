@@ -16,15 +16,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     
     var calculatorBrain = CalculatorBrain()
-    let totalAmountOfTime = 1
-    var amountOfTime = 1
+    let totalAmountOfTime = 60
+    var amountOfTime = 60
     var countDown = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         calculatorBrain.createTask(taskLabel)
         countDown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
+        calculatorBrain.score = 0
+        amountOfTime = 60
+        progressBar.progress = 1
     }
     
     override open var shouldAutorotate: Bool {
@@ -34,7 +40,7 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultViewController
-            destinationVC.scoreString = "\(calculatorBrain.score)"
+            destinationVC.scoreString = "Score: \(calculatorBrain.score)"
         }
     }
     
@@ -54,6 +60,8 @@ class ViewController: UIViewController {
         if Int(answerLabel.text ?? "0") == calculatorBrain.correctAnswer {
             answerLabel.textColor = .green
             calculatorBrain.score += 1
+            countDown.invalidate()
+            scoreLabel.text = "\(calculatorBrain.score)"
             Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(wait), userInfo: nil, repeats: false)
         }
     }
@@ -70,6 +78,7 @@ class ViewController: UIViewController {
     }
     
     @objc func wait() {
+        countDown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
         answerLabel.text = ""
         answerLabel.textColor = .white
         calculatorBrain.createTask(taskLabel)
