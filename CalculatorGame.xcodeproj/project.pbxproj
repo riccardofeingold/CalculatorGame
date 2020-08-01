@@ -14,6 +14,7 @@
 		DB0F811224D16353000BA106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB0F811124D16353000BA106 /* Assets.xcassets */; };
 		DB0F811524D16353000BA106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB0F811324D16353000BA106 /* LaunchScreen.storyboard */; };
 		DB159A1724D436D60094DA57 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB159A1624D436D60094DA57 /* CalculatorBrain.swift */; };
+		DB219A1A24D578D000DD14A7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB219A1924D578D000DD14A7 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		DB0F811424D16353000BA106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB0F811624D16353000BA106 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB159A1624D436D60094DA57 /* CalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalculatorBrain.swift; path = Model/CalculatorBrain.swift; sourceTree = "<group>"; };
+		DB219A1924D578D000DD14A7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				DB0F810C24D16350000BA106 /* ViewController.swift */,
+				DB219A1924D578D000DD14A7 /* ResultViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB219A1A24D578D000DD14A7 /* ResultViewController.swift in Sources */,
 				DB0F810D24D16350000BA106 /* ViewController.swift in Sources */,
 				DB0F810924D16350000BA106 /* AppDelegate.swift in Sources */,
 				DB159A1724D436D60094DA57 /* CalculatorBrain.swift in Sources */,

@@ -11,10 +11,8 @@ import UIKit
 struct CalculatorBrain {
     let operations = ["+","-","*","/"]
     var correctAnswer = 0
-    
-    var isTrue = false
-    
     var score = 0
+    var isTrue = false
     
     mutating func createTask(_ taskLabel: UILabel) {
         let firstNumber = Int.random(in: 1...100)
@@ -35,15 +33,6 @@ struct CalculatorBrain {
             self.correctAnswer = divide(firstNumber, secondNumber, taskLabel, operation)
         default:
             return
-        }
-    }
-    
-    mutating func checkAnswer(_ answerLabel: UILabel, _ taskLabel: UILabel) {
-        if Int(answerLabel.text ?? "0") == self.correctAnswer {
-            answerLabel.textColor = .green
-            //Add delay function
-            answerLabel.text = ""
-            self.createTask(taskLabel)
         }
     }
     
