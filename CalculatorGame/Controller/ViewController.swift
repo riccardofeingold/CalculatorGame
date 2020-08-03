@@ -29,6 +29,8 @@ class ViewController: UIViewController {
         calculatorBrain.createTask(taskLabel)
         countDown = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timer), userInfo: nil, repeats: true)
         calculatorBrain.score = 0
+        scoreLabel.text = "Score: \(calculatorBrain.score)"
+        print(calculatorBrain.score)
         amountOfTime = 60
         progressBar.progress = 1
     }
@@ -61,7 +63,7 @@ class ViewController: UIViewController {
             answerLabel.textColor = .green
             calculatorBrain.score += 1
             countDown.invalidate()
-            scoreLabel.text = "\(calculatorBrain.score)"
+            scoreLabel.text = "Score: \(calculatorBrain.score)"
             Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(wait), userInfo: nil, repeats: false)
         }
     }
